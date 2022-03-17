@@ -1,7 +1,7 @@
 package application;
 
 import java.io.IOException;
-//import java.sql.*;
+import java.sql.*;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
@@ -53,30 +53,30 @@ public class LoginController {
 	
 	@FXML
 	public void loginButtonAction(ActionEvent event) throws IOException {
-//		if (userName.getText().isBlank() == false && pwfield.getText().isBlank() == false) {
-//			validateLogin();
-//		}
-		WindowNavigation.switchToView("Home");
+		if (userName.getText().isBlank() && pwfield.getText().isBlank()) {
+			validateLogin();
+		}else {
+			System.out.println("wrong input");
+		}
 	}
 
-//	public void validateLogin() {
-//		Connection conDB = DatabaseConnection.Connection();
-//
-//		String verifyLogin = "SELECT count(1) FROM user_account WHERE username = '" + userName.getText() + "' AND password = '" + pwfield.getText() + "'";
-//	
-//		try {
-//			Statement stmt = conDB.createStatement();
-//			ResultSet queryRes = stmt.executeQuery(verifyLogin);
-//			
-//			while (queryRes.next()) {
-//				if (queryRes.getInt(1) == 1) {
-//					WindowNavigation.switchToView("Home");
-//				}
-//			}
-//			
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			e.getCause();
-//		}
-//	}
+	public void validateLogin() {
+		Connection conDB = DatabaseConnection.DBConnection();;
+
+		String verifyLogin = "SELECT count(1) FROM user_account WHERE username = '" + userName.getText() + "' AND password = '" + pwfield.getText() + "';";
+	
+		try {
+			Statement stmt = conDB.createStatement();
+			ResultSet queryRes = stmt.executeQuery(verifyLogin);
+			
+			while (queryRes.next()) {
+				if (queryRes.getInt(1) == 1) {
+					WindowNavigation.switchToView("Home");
+				}
+			}	
+		} catch (Exception e) {
+			e.printStackTrace();
+			e.getCause();
+		}
+	}
 }

@@ -2,13 +2,13 @@ package application;
 
 import java.sql.DriverManager;
 import java.sql.Connection;
-import java.sql.ConnectionBuilder;
+
 
 public class DatabaseConnection {
-	static ConnectionBuilder connection = null;
+	static Connection connection = null;
 
 	
-	static void Connection() {
+	static Connection DBConnection() {
 		String URL = "jdbc:mysql://localhost:3307";
 		String user = "root";
 		String pw = "Moiz&2oo2";
@@ -21,5 +21,6 @@ public class DatabaseConnection {
 			e.printStackTrace();
 			e.getCause();
 		}
+		 return connection;
 	}
 }
