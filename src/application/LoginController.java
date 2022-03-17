@@ -17,7 +17,7 @@ public class LoginController {
 
 	@FXML
 	private JFXTextField userName;
-	
+
 	@FXML
 	private JFXPasswordField pwfield;
 
@@ -50,30 +50,31 @@ public class LoginController {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@FXML
 	public void loginButtonAction(ActionEvent event) throws IOException {
-		if (userName.getText().isBlank() && pwfield.getText().isBlank()) {
+
+		if (userName.getText().isBlank() == false && pwfield.getText().isBlank() == false) {
 			validateLogin();
-		}else {
+		} else {
 			System.out.println("wrong input");
 		}
 	}
 
 	public void validateLogin() {
-		Connection conDB = DatabaseConnection.DBConnection();;
+		Connection conDB = DatabaseConnection.DBConnection();
 
 		String verifyLogin = "SELECT count(1) FROM user_account WHERE username = '" + userName.getText() + "' AND password = '" + pwfield.getText() + "';";
-	
+
 		try {
 			Statement stmt = conDB.createStatement();
 			ResultSet queryRes = stmt.executeQuery(verifyLogin);
-			
+
 			while (queryRes.next()) {
 				if (queryRes.getInt(1) == 1) {
 					WindowNavigation.switchToView("Home");
 				}
-			}	
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			e.getCause();
