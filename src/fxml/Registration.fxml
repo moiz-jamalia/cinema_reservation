@@ -5,46 +5,46 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane id="stackpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="450.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RegistrationController">
+<StackPane fx:id="stackpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="450.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RegistrationController">
     <children>
-        <AnchorPane id="mainloginpane" prefHeight="450.0" prefWidth="400.0" style="-fx-background-color: Black;">
+        <AnchorPane fx:id="mainloginpane" prefHeight="450.0" prefWidth="400.0" style="-fx-background-color: Black;">
             <children>
 	           <Label layoutX="101.0" layoutY="46.0" text="Registration" textAlignment="CENTER" textFill="WHITE">
 	               <font>
 	                   <Font size="50.0" />
 	               </font>
 	           </Label>
-	           <JFXTextField id="userName" focusColor="WHITE" labelFloat="true" layoutX="51.0" layoutY="184.0" promptText="Username" style="-fx-text-fill: WHITE;" unFocusColor="WHITE">
+	           <JFXTextField fx:id="userName" focusColor="WHITE" labelFloat="true" layoutX="51.0" layoutY="184.0" promptText="Username" style="-fx-text-fill: WHITE;" unFocusColor="WHITE">
 	               <font>
 	                   <Font size="15.0" />
 	               </font>
 	           </JFXTextField>
-	           <JFXTextField id="lastName" focusColor="WHITE" labelFloat="true" layoutX="247.0" layoutY="119.0" promptText="Last Name" style="-fx-text-fill: WHITE;" unFocusColor="WHITE">
+	           <JFXTextField fx:id="lastName" focusColor="WHITE" labelFloat="true" layoutX="247.0" layoutY="119.0" promptText="Last Name" style="-fx-text-fill: WHITE;" unFocusColor="WHITE">
 	              <font>
 	                 <Font size="15.0" />
 	              </font>
 	           </JFXTextField>
-	           <JFXTextField id="firstName" focusColor="WHITE" labelFloat="true" layoutX="51.0" layoutY="119.0" promptText="First Name" style="-fx-text-fill: WHITE;" unFocusColor="WHITE">
+	           <JFXTextField fx:id="firstName" focusColor="WHITE" labelFloat="true" layoutX="51.0" layoutY="119.0" promptText="First Name" style="-fx-text-fill: WHITE;" unFocusColor="WHITE">
 	              <font>
 	                 <Font size="15.0" />
 	              </font>
 	           </JFXTextField>
-	               <JFXPasswordField id="pwfield" focusColor="white" labelFloat="true" layoutX="51.0" layoutY="236.0" promptText="Password" style="-fx-text-fill: WHITE;" unFocusColor="WHITE">
+	               <JFXPasswordField fx:id="pwfield" focusColor="white" labelFloat="true" layoutX="51.0" layoutY="236.0" promptText="Password" style="-fx-text-fill: WHITE;" unFocusColor="WHITE">
 	                   <font>
 	                       <Font size="15.0" />
 	                   </font>
 	               </JFXPasswordField>
-	           <JFXPasswordField id="confirmpwfield" focusColor="white" labelFloat="true" layoutX="247.0" layoutY="236.0" promptText="Confirm Password" style="-fx-text-fill: WHITE;" unFocusColor="WHITE">
+	           <JFXPasswordField fx:id="confirmpwfield" focusColor="white" labelFloat="true" layoutX="247.0" layoutY="236.0" promptText="Confirm Password" style="-fx-text-fill: WHITE;" unFocusColor="WHITE">
 	              <font>
 	                 <Font size="15.0" />
 	              </font>
 	           </JFXPasswordField>
-	           <JFXButton id="registerbtn" layoutX="68.0" layoutY="322.0" prefHeight="32.0" prefWidth="109.0" text="Register" textFill="WHITE">
+	           <JFXButton fx:id="registerbtn" layoutX="68.0" layoutY="322.0" prefHeight="32.0" prefWidth="109.0" text="Register" textFill="WHITE">
 	               <font>
 	                   <Font size="15.0" />
 	               </font>
 	           </JFXButton>
-	           <JFXButton id="cancelbtn" onAction="#registrationButtonAction" layoutX="247.0" layoutY="322.0" prefHeight="32.0" prefWidth="109.0" text="cancel" textFill="WHITE">
+	           <JFXButton fx:id="cancelbtn" onAction="#registrationButtonAction" layoutX="247.0" layoutY="322.0" prefHeight="32.0" prefWidth="109.0" text="cancel" textFill="WHITE">
 	               <font>
 	                   <Font size="15.0" />
 	               </font>

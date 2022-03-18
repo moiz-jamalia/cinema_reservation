@@ -3,24 +3,23 @@ package application;
 import java.sql.DriverManager;
 import java.sql.Connection;
 
-
 public class DatabaseConnection {
-	static Connection connection = null;
-
 	
-	static Connection DBConnection() {
-		String URL = "jdbc:mysql://localhost:3307";
-		String user = "root";
-		String pw = "Moiz&2oo2";
+	static Connection conn = null;
+
+	static Connection DBConnection() throws ClassNotFoundException {
+		final String URL = "jdbc:mysql://127.0.0.1:3307/cinema";
+		final String user = "cinema_admin@localhost";
+		final String pw = "cinema_reservation";
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			connection = DriverManager.getConnection(URL, user, pw);
+			DatabaseConnection.class.forName("com.mysql.cj.jdbc.Driver");
+			conn = DriverManager.getConnection(URL, user, pw);
 			System.out.println("Successfully connected to database");
 		} catch (Exception e) {
 			System.out.println("Connection to the Database failed");
-			e.printStackTrace();
+			System.out.println(e);
 			e.getCause();
 		}
-		 return connection;
+		return conn;
 	}
 }

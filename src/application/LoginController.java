@@ -52,16 +52,15 @@ public class LoginController {
 	}
 
 	@FXML
-	public void loginButtonAction(ActionEvent event) throws IOException {
-
-		if (userName.getText().isBlank() == false && pwfield.getText().isBlank() == false) {
+	public void loginButtonAction(ActionEvent event) throws IOException, ClassNotFoundException{
+		if (!userName.getText().isBlank() && !pwfield.getText().isBlank()) {
 			validateLogin();
-		} else {
+		} else 	{
 			System.out.println("wrong input");
 		}
 	}
 
-	public void validateLogin() {
+	public void validateLogin() throws ClassNotFoundException {
 		Connection conDB = DatabaseConnection.DBConnection();
 
 		String verifyLogin = "SELECT count(1) FROM user_account WHERE username = '" + userName.getText() + "' AND password = '" + pwfield.getText() + "';";
