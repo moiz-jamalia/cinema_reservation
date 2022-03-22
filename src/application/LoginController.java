@@ -1,6 +1,5 @@
 package application;
 
-import java.io.IOException;
 import java.sql.*;
 
 import com.jfoenix.controls.JFXButton;
@@ -52,15 +51,15 @@ public class LoginController {
 	}
 
 	@FXML
-	public void loginButtonAction(ActionEvent event) throws IOException, ClassNotFoundException{
+	public void loginButtonAction(ActionEvent event) throws Exception {
 		if (!userName.getText().isBlank() && !pwfield.getText().isBlank()) {
 			validateLogin();
-		} else 	{
+		} else {
 			System.out.println("wrong input");
 		}
 	}
 
-	public void validateLogin() throws ClassNotFoundException {
+	public void validateLogin() throws Exception {
 		Connection conDB = DatabaseConnection.DBConnection();
 
 		String verifyLogin = "SELECT count(1) FROM user_account WHERE username = '" + userName.getText() + "' AND password = '" + pwfield.getText() + "';";
