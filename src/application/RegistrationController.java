@@ -12,10 +12,10 @@ import javafx.scene.layout.StackPane;
 public class RegistrationController {
 	
 	@FXML
-	private StackPane stackpane;
+	private StackPane stackPane;
 	
 	@FXML
-	private AnchorPane mainloginpane;
+	private AnchorPane mainloginPane;
 	
 	@FXML 
 	private JFXTextField userName;
@@ -39,7 +39,7 @@ public class RegistrationController {
 	private JFXButton cancelbtn;
 	
 	@FXML
-	public void registrationButtonAction(ActionEvent event) {
+	public void cancelButtonAction(ActionEvent event) {
 		try {
 			WindowNavigation.switchToView("Login");
 		} catch (Exception e) {

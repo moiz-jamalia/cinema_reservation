@@ -7,13 +7,13 @@ import java.sql.Connection;
 public class DatabaseConnection {
 
 	static Connection connection = null;
-	final static String jdbcURL = "jdbc:mysql://@localhost:3307/cinema";
+	final static String jdbcURL = "jdbc:mysql://localhost:3307/cinema?allowPublicKeyRetrieval=true&useSSL=false";
 //	final static String username = "cinema_admin";
 	final static String username = "root";
-//	final static String password = "cinema_reservation";
-		final static String password = "root";
+//  final static String password = "cinema_reservation";
+	final static String password = "root";
 
-	static Connection DBConnection() throws Exception, SQLException {
+	static Connection DBConnection() throws ClassNotFoundException, SQLException {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");

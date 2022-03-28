@@ -51,17 +51,14 @@ public class LoginController {
 	}
 
 	@FXML
-	public void loginButtonAction(ActionEvent event) throws Exception {
-		if (!userName.getText().isBlank() && !pwfield.getText().isBlank()) {
-			validateLogin();
-		} else {
-			System.out.println("wrong input");
-		}
+	public void loginButtonAction(ActionEvent event) throws ClassNotFoundException, SQLException {
+		if (!userName.getText().isBlank() && !pwfield.getText().isBlank()) validateLogin(); 
+		else System.out.println("wrong input");
 	}
 
-	public void validateLogin() throws Exception {
+	public void validateLogin() throws ClassNotFoundException, SQLException {
 		Connection conDB = DatabaseConnection.DBConnection();
-
+		
 		String verifyLogin = "SELECT count(1) FROM user_account WHERE username = '" + userName.getText() + "' AND password = '" + pwfield.getText() + "';";
 
 		try {
@@ -69,9 +66,7 @@ public class LoginController {
 			ResultSet queryRes = stmt.executeQuery(verifyLogin);
 
 			while (queryRes.next()) {
-				if (queryRes.getInt(1) == 1) {
-					WindowNavigation.switchToView("Home");
-				}
+				if (queryRes.getInt(1) == 1) WindowNavigation.switchToView("Home");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
