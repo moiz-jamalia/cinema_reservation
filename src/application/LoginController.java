@@ -44,7 +44,7 @@ public class LoginController {
 	private JFXButton okaybtn;
 	
 	@FXML
-	public Label infoLabel;
+	public static Label infoLabel;
 	
 	@FXML
 	private Stage stage;
@@ -93,18 +93,16 @@ public class LoginController {
 		
 		int username = DatabaseConnection.getUserName(userName.getText());
 		int pw = DatabaseConnection.getPassword(pwfield.getText());
-		
-		infoLabel.getText();
 				
 		if (username == 1 && pw == 0) {
 //			infoLabel.setText("Password is incorrect");
-			WindowNavigation.infoWindow(stage, loginbtn, infoLabel, "Password is incorrect");
+			WindowNavigation.infoWindow(stage, loginbtn, "Password is incorrect");
 		}else if (username == 0 && pw == 1) {
 //			infoLabel.setText("username is incorrect");
-			WindowNavigation.infoWindow(stage, loginbtn, infoLabel, "Username is incorrect");
+			WindowNavigation.infoWindow(stage, loginbtn, "Username is incorrect");
 		}else if (username == 0 && pw == 0) {
 //			infoLabel.setText("username & Password are incorrect");
-			WindowNavigation.infoWindow(stage, loginbtn, infoLabel, "Username & Password are incorrect");
+			WindowNavigation.infoWindow(stage, loginbtn, "Username & Password are incorrect");
 		}else validateLogin();
 	}
 	

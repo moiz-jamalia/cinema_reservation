@@ -14,19 +14,22 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class WindowNavigation {
+	
 	public static void switchToView(String view) throws IOException {
 		Parent root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("/fxml/" + view + ".fxml")));
 		Main.primaryStage.setScene(new Scene(root));
 		Main.primaryStage.show();
 	}
 	
-	public static void infoWindow(Stage stage, JFXButton button, Label label, String message) throws IOException {
+	public static void infoWindow(Stage stage, JFXButton button, String message) throws IOException {
 		Parent root = FXMLLoader.load(Objects.requireNonNull(LoginController.class.getResource("/fxml/PopUpScreen.fxml")));
 		stage = new Stage();
+		Label label = new Label();
+		label.setText(message);
+		LoginController.infoLabel = label;
 		stage.initStyle(StageStyle.UNDECORATED);
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
-		label.setText(message);
 		stage.initModality(Modality.APPLICATION_MODAL);
 		stage.initOwner(button.getScene().getWindow());
 		stage.showAndWait();

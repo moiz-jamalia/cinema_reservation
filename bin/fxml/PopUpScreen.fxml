@@ -9,7 +9,7 @@
     <children>
         <AnchorPane fx:id="mainPopUpPane" prefHeight="200.0" prefWidth="250.0" style="-fx-background-color: BLACK;">
             <children>
-                <Label fx:id="infoLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="75.0" prefHeight="30.0" prefWidth="200.0" text="get Txt" textFill="WHITE">
+                <Label fx:id="infoLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="75.0" prefHeight="30.0" prefWidth="200.0" textFill="WHITE">
                     <font>
                         <Font size="20.0" />
                     </font>
