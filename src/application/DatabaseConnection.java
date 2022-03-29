@@ -26,7 +26,9 @@ public class DatabaseConnection {
 		return connection;
 	}
 
-	static int getUserName(String username, Connection connection) throws SQLException {
+	static int getUserName(String username) throws SQLException, ClassNotFoundException {
+		
+		Connection connection = DBConnection();
 
 		String getUserName = "SELECT COUNT(1) FROM user_account WHERE username = '" + username + "';";
 		int userName = 0;
@@ -41,7 +43,9 @@ public class DatabaseConnection {
 		return userName;
 	}
 
-	static int getPassword(String pw, Connection connection) throws SQLException {
+	static int getPassword(String pw) throws SQLException, ClassNotFoundException {
+		
+		Connection connection = DBConnection();
 
 		String getPassword = "SELECT COUNT(1) FROM user_account WHERE password = '" + pw + "';";
 		int password = 0;

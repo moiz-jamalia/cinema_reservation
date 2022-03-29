@@ -9,15 +9,10 @@ import com.jfoenix.controls.JFXTextField;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 public class LoginController {
 
@@ -49,7 +44,7 @@ public class LoginController {
 	private JFXButton okaybtn;
 	
 	@FXML
-	private Label infoLabel;
+	public Label infoLabel;
 	
 	@FXML
 	private Stage stage;
@@ -93,30 +88,29 @@ public class LoginController {
 		}
 	}
 	
+	@FXML
 	private void InfoWindow() throws IOException, SQLException, ClassNotFoundException {
-		Connection conDB = DatabaseConnection.DBConnection();
 		
-		int username = DatabaseConnection.getUserName(userName.getText(), conDB);
-		int pw = DatabaseConnection.getPassword(pwfield.getText(), conDB);
+		int username = DatabaseConnection.getUserName(userName.getText());
+		int pw = DatabaseConnection.getPassword(pwfield.getText());
 		
-		System.out.println(infoLabel.getText());
+		infoLabel.getText();
 				
 		if (username == 1 && pw == 0) {
-			infoLabel.setText("Password is incorrect");
-			WindowNavigation.infoWindow(stage, loginbtn);
+//			infoLabel.setText("Password is incorrect");
+			WindowNavigation.infoWindow(stage, loginbtn, infoLabel, "Password is incorrect");
 		}else if (username == 0 && pw == 1) {
-			infoLabel.setText("username is incorrect");
-			WindowNavigation.infoWindow(stage, loginbtn);
+//			infoLabel.setText("username is incorrect");
+			WindowNavigation.infoWindow(stage, loginbtn, infoLabel, "Username is incorrect");
 		}else if (username == 0 && pw == 0) {
-			infoLabel.setText("username & Password are incorrect");
-			WindowNavigation.infoWindow(stage, loginbtn);
+//			infoLabel.setText("username & Password are incorrect");
+			WindowNavigation.infoWindow(stage, loginbtn, infoLabel, "Username & Password are incorrect");
 		}else validateLogin();
-		
 	}
 	
 	@FXML
 	public void okayButtonAction(ActionEvent event) {
-		if (event.getTarget() == okaybtn) stage.close();
-		else stage.showAndWait();
+		Stage stage = (Stage) okaybtn.getScene().getWindow();
+		stage.close();
 	}
 }

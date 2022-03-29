@@ -5,16 +5,16 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane fx:id="stackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
+<StackPane fx:id="stackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="250.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
     <children>
-        <AnchorPane fx:id="mainPopUpPane" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: BLACK;">
+        <AnchorPane fx:id="mainPopUpPane" prefHeight="200.0" prefWidth="250.0" style="-fx-background-color: BLACK;">
             <children>
                 <Label fx:id="infoLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="75.0" prefHeight="30.0" prefWidth="200.0" text="get Txt" textFill="WHITE">
                     <font>
                         <Font size="20.0" />
                     </font>
                 </Label>
-                <JFXButton fx:id="okaybtn" onAction="#okayButtonAction" layoutX="100.0" layoutY="125.0" text="Okay">
+                <JFXButton fx:id="okaybtn" onAction="#okayButtonAction" layoutX="100.0" layoutY="125.0" text="Okay" textFill="WHITE">
                 </JFXButton>
             </children>
         </AnchorPane>
