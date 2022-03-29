@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
@@ -8,16 +9,11 @@
     <children>
         <AnchorPane fx:id="mainWelcomePane" prefHeight="450.0" prefWidth="400.0" style="-fx-background-color: BLACK;">
             <children>
-                <Label layoutX="75.0" layoutY="70.0" text="Welcome" textFill="WHITE">
-                    <font>
-                        <Font name="Segoe UI Black" size="70.0" />
-                    </font>
-                </Label>
-                <Label fx:id="UserName" alignment="CENTER" contentDisplay="CENTER" layoutY="175.0" prefHeight="55.0" prefWidth="450.0" textAlignment="CENTER" textFill="WHITE">
-                    <font>
-                        <Font name="Segoe UI Black" size="36.0" />
-                    </font>
-                </Label>
+                <ImageView fx:id="imageView" fitHeight="240.0" fitWidth="450.0">
+                	<image>
+                    	<Image url="/img/cinema/Logo_Name_Slogan.png"/>
+                	</image>
+                </ImageView>
                 <Label layoutX="200.0" layoutY="255.0" text="Loading..." textFill="WHITE">
                     <font>
                         <Font name="Segoe UI Black" size="13.0" />
