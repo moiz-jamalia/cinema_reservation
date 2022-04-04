@@ -43,9 +43,10 @@ public class PopUpScreenController {
 	
 	public static void infoWindow(JFXButton button, String message) throws IOException, NullPointerException {
 		Parent root = FXMLLoader.load(Objects.requireNonNull(LoginController.class.getResource("/fxml/PopUpScreen.fxml")));
-		Label label = new Label();
-		label.setText(message);
-		infoLabel = label;
+		infoLabel = new Label();
+		infoLabel.setText(message);
+		infoLabel.setTextFill(javafx.scene.paint.Color.WHITE);
+		System.out.println(infoLabel.getText());
 		stage = new Stage();
 		stage.initStyle(StageStyle.UNDECORATED);
 		Scene scene = new Scene(root);

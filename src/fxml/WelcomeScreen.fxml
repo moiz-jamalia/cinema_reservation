@@ -11,7 +11,7 @@
             <children>
                 <ImageView fx:id="imageView" fitHeight="240.0" fitWidth="450.0" layoutX="7.0" layoutY="48.0" preserveRatio="true">
                     <image>
-						<Image url="@C:/Users/moizj/eclipse-workspace/cinema_reservation/src/img/cinema/Logo_Name_Slogan.png" />
+						<Image url="@../img/cinema/Logo_Name_Slogan.png" />
                     </image>
                 </ImageView>
                 <Label layoutX="200.0" layoutY="255.0" text="Loading..." textFill="WHITE">

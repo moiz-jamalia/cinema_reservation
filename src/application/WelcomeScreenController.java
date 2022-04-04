@@ -53,7 +53,6 @@ public class WelcomeScreenController implements Initializable{
 //					fadeIn.setOnFinished((e)->{
 //						fadeOut.play();
 //					});
-					
 					WindowNavigation.switchToView("Home");
 				} catch (IOException | InterruptedException e) {
 					e.printStackTrace();

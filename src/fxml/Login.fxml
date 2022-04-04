@@ -12,7 +12,7 @@
             <children>
             <ImageView fx:id="imageView" fitHeight="250.0" fitWidth="450.0" preserveRatio="true">
                     <image>
-						<Image url="@C:/Users/moizj/eclipse-workspace/cinema_reservation/src/img/cinema/Name.png" />
+						<Image url="@../img/cinema/Name.png" />
                     </image>
             </ImageView>
             <JFXTextField fx:id="userName" onAction="#loginButtonAction" focusColor="WHITE" labelFloat="true" layoutX="140.0" layoutY="155.0" promptText="Username" style="-fx-text-fill: WHITE;" unFocusColor="WHITE">
