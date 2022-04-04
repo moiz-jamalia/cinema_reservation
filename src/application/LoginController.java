@@ -9,7 +9,9 @@ import com.jfoenix.controls.JFXTextField;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class LoginController {
@@ -22,6 +24,12 @@ public class LoginController {
 
 	@FXML
 	private AnchorPane mainLoginPane;
+	
+	@FXML
+	private StackPane stackPane;
+	
+	@FXML
+	private ImageView imageView;
 
 	@FXML
 	private JFXButton loginbtn;
@@ -62,7 +70,7 @@ public class LoginController {
 			ResultSet queryRes = stmt.executeQuery(verifyLogin);
 
 			while (queryRes.next()) {
-				if (queryRes.getInt(1) == 1) WindowNavigation.switchToView("Home");
+				if (queryRes.getInt(1) == 1) WindowNavigation.switchToView("WelcomeScreen");
 				else InfoWindow();
 			}
 		} catch (Exception e) {

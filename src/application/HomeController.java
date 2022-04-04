@@ -11,8 +11,6 @@ public class HomeController {
 	
 	@FXML
 	private AnchorPane mainHomePane;
-
-	private void loadWelcomeScreen() {
-		
-	}
+	
+	
 }

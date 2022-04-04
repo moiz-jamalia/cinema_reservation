@@ -23,7 +23,6 @@ public class Main extends Application {
 			primaryStage.setTitle("Login");
 			primaryStage.setScene(new Scene(root));
 			primaryStage.show();
-		
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
