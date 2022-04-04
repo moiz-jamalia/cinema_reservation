@@ -64,10 +64,6 @@ public class RegistrationController {
 		String password = pwfield.getText();
 		String confirmpassword = confirmpwfield.getText();
 		
-		System.out.println("Password: " + password);
-		System.out.println("Confirmpassword: " + confirmpassword);
-		
-		if (firstName.getText().isBlank() || lastName.getText().isBlank() || userName.getText().isBlank() || pwfield.getText().isBlank() || confirmpwfield.getText().isBlank()) {
 			if (password.equals(confirmpassword)) {
 				if (username == 0) {
 					String insert = "INSERT INTO user_account"
@@ -86,6 +82,5 @@ public class RegistrationController {
 				}else System.out.println("Username already Taken"); //WindowNavigation.infoWindow(stage, registerbtn, "Username is already Taken!");
 				
 			}else System.out.println("the password is not equal with the input"); //WindowNavigation.infoWindow(stage, registerbtn, "the password are not equal with the input");
-		}else System.out.println("please complete your registration!");
 	}
 }

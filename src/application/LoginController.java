@@ -9,9 +9,7 @@ import com.jfoenix.controls.JFXTextField;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class LoginController {
@@ -24,12 +22,6 @@ public class LoginController {
 
 	@FXML
 	private AnchorPane mainLoginPane;
-	
-	@FXML
-	private AnchorPane mainPopUpPane;
-
-	@FXML
-	private StackPane stackPane;
 
 	@FXML
 	private JFXButton loginbtn;
@@ -39,15 +31,6 @@ public class LoginController {
 
 	@FXML
 	private JFXButton registrationbtn;
-	
-	@FXML
-	private JFXButton okaybtn;
-	
-	@FXML
-	private Label infoLabel = new Label();
-	
-	@FXML
-	private Stage stage;
 
 	@FXML
 	public void closeButtonAction(ActionEvent event) {
@@ -96,19 +79,13 @@ public class LoginController {
 				
 		if (username == 1 && pw == 0) {
 //			infoLabel.setText("Password is incorrect");
-			WindowNavigation.infoWindow(stage, loginbtn, infoLabel, "Password is incorrect");
+			PopUpScreenController.infoWindow(loginbtn, "Password is incorrect");
 		}else if (username == 0 && pw == 1) {
 //			infoLabel.setText("username is incorrect");
-			WindowNavigation.infoWindow(stage, loginbtn, infoLabel, "Username is incorrect");
+			PopUpScreenController.infoWindow( loginbtn, "Username is incorrect");
 		}else if (username == 0 && pw == 0) {
 //			infoLabel.setText("username & Password are incorrect");
-			WindowNavigation.infoWindow(stage, loginbtn, infoLabel, "Username & Password are incorrect");
+			PopUpScreenController.infoWindow(loginbtn, "Username & Password are incorrect");
 		}else validateLogin();
-	}
-	
-	@FXML
-	public void okayButtonAction(ActionEvent event) {
-		Stage stage = (Stage) okaybtn.getScene().getWindow();
-		stage.close();
 	}
 }

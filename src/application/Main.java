@@ -18,11 +18,10 @@ public class Main extends Application {
 		primaryStage = stage;
 		try {
 			Parent root = (Parent) FXMLLoader.load(getClass().getResource("/fxml/Login.fxml"));
-			primaryStage.initStyle(StageStyle.UNDECORATED);
-			Image image = new Image(getClass().getResourceAsStream("/img/cinema/Logo.png"));               
-			primaryStage.getIcons().add(image);
-			Scene scene = new Scene(root);
-			primaryStage.setScene(scene);
+			primaryStage.initStyle(StageStyle.UNDECORATED);               
+			primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/img/cinema/Logo.png")));
+			primaryStage.setTitle("Login");
+			primaryStage.setScene(new Scene(root));
 			primaryStage.show();
 		
 		} catch(Exception e) {
