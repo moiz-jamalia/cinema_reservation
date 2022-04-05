@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.jfoenix.controls.JFXProgressBar;
+
 import javafx.animation.FadeTransition;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -28,6 +30,9 @@ public class WelcomeScreenController implements Initializable{
 	@FXML
 	private Label UserName;
 	
+	@FXML
+	private JFXProgressBar progressbar;
+	
 	public void initialize(URL url, ResourceBundle rb) {
 		splashScreen();
 	}
@@ -38,21 +43,21 @@ public class WelcomeScreenController implements Initializable{
 			public void run() {
 				try {
 					Thread.sleep(5000);
-//					FadeTransition fadeIn = new FadeTransition(Duration.seconds(3), stackPane);
-//					fadeIn.setFromValue(0);
-//					fadeIn.setToValue(1);
-//					fadeIn.setCycleCount(1);
-//					
-//					FadeTransition fadeOut = new FadeTransition(Duration.seconds(3), stackPane);
-//					fadeOut.setFromValue(1);
-//					fadeOut.setToValue(0);
-//					fadeOut.setCycleCount(1);
-//					
-//					fadeIn.play();
-//					
-//					fadeIn.setOnFinished((e)->{
-//						fadeOut.play();
-//					});
+					FadeTransition fadeIn = new FadeTransition(Duration.seconds(3), Main.primaryStage.getScene().getRoot());
+					fadeIn.setFromValue(0);
+					fadeIn.setToValue(1);
+					fadeIn.setCycleCount(1);
+					
+					FadeTransition fadeOut = new FadeTransition(Duration.seconds(3), Main.primaryStage.getScene().getRoot());
+					fadeOut.setFromValue(1);
+					fadeOut.setToValue(0);
+					fadeOut.setCycleCount(1);
+					
+					fadeIn.play();
+					
+					fadeIn.setOnFinished((e)->{
+						fadeOut.play();
+					});
 					WindowNavigation.switchToView("Home");
 				} catch (IOException | InterruptedException e) {
 					e.printStackTrace();

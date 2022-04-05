@@ -60,15 +60,11 @@ public class RegistrationController {
 	public void registrationButtonAction(ActionEvent event) throws ClassNotFoundException, SQLException, IOException {
 		Connection conDB = DatabaseConnection.DBConnection();
 		int username = DatabaseConnection.getUserName(userName.getText());
-		
-		String password = pwfield.getText();
-		String confirmpassword = confirmpwfield.getText();
-		
-			if (password.equals(confirmpassword)) {
+
+		if (!firstName.getText().isBlank() && !lastName.getText().isBlank() && !userName.getText().isBlank() && !pwfield.getText().isBlank() && !confirmpwfield.getText().isBlank()) {
+			if (pwfield.getText().equals(confirmpwfield.getText())) {
 				if (username == 0) {
-					String insert = "INSERT INTO user_account"
-							+ " (firstname, lastname, username, password, user_role) "
-							+ "VALUES ('" + firstName.getText() + "', '" + lastName.getText() + "', '" + userName.getText() + "', '" + pwfield.getText() + "', 'user');";
+					String insert = "INSERT INTO user_account (firstname, lastname, username, password, user_role) VALUES ('" + firstName.getText() + "', '" + lastName.getText() + "', '" + userName.getText() + "', '" + pwfield.getText() + "', 'user');";
 					try {
 						Statement stmt = conDB.createStatement();
 						stmt.executeUpdate(insert);
@@ -78,9 +74,8 @@ public class RegistrationController {
 						e.printStackTrace();
 						System.out.println("inserting Data unsuccessful");
 					}
-					
-				}else System.out.println("Username already Taken"); //WindowNavigation.infoWindow(stage, registerbtn, "Username is already Taken!");
-				
-			}else System.out.println("the password is not equal with the input"); //WindowNavigation.infoWindow(stage, registerbtn, "the password are not equal with the input");
+				} else PopUpScreenController.infoWindow("Username is already Taken!", "Please take another Username that isn't taken");
+			} else PopUpScreenController.infoWindow("the passwords are not indentical!", "Please enter the passwords again");
+		}else PopUpScreenController.infoWindow("please complete your Registration!", null);
 	}
 }

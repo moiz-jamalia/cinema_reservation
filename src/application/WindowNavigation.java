@@ -16,5 +16,5 @@ public class WindowNavigation {
 		Main.primaryStage.setTitle(view);
 		Main.primaryStage.setScene(new Scene(root));
 		Main.primaryStage.show();
-	}	
+	}
 }

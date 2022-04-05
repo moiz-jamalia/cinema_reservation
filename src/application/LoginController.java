@@ -5,6 +5,7 @@ import java.sql.*;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXProgressBar;
 import com.jfoenix.controls.JFXTextField;
 
 import javafx.event.ActionEvent;
@@ -39,6 +40,9 @@ public class LoginController {
 
 	@FXML
 	private JFXButton registrationbtn;
+	
+	@FXML
+	private JFXProgressBar progressbar;
 
 	@FXML
 	public void closeButtonAction(ActionEvent event) {
@@ -58,6 +62,8 @@ public class LoginController {
 	@FXML
 	public void loginButtonAction(ActionEvent event) throws ClassNotFoundException, SQLException, IOException {
 		if (!userName.getText().isBlank() && !pwfield.getText().isBlank()) InfoWindow(); 
+		else if (!userName.getText().isBlank() && pwfield.getText().isBlank()) InfoWindow();
+		else InfoWindow();
 	}
 
 	public void validateLogin() throws ClassNotFoundException, SQLException {
@@ -70,8 +76,9 @@ public class LoginController {
 			ResultSet queryRes = stmt.executeQuery(verifyLogin);
 
 			while (queryRes.next()) {
-				if (queryRes.getInt(1) == 1) WindowNavigation.switchToView("WelcomeScreen");
-				else InfoWindow();
+				if (queryRes.getInt(1) == 1) {
+					WindowNavigation.switchToView("WelcomeScreen");
+				}else InfoWindow();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -86,14 +93,11 @@ public class LoginController {
 		int pw = DatabaseConnection.getPassword(pwfield.getText());
 				
 		if (username == 1 && pw == 0) {
-//			infoLabel.setText("Password is incorrect");
-			PopUpScreenController.infoWindow(loginbtn, "Password is incorrect");
+			PopUpScreenController.infoWindow("Password is incorrect", "Please enter your Password again");
 		}else if (username == 0 && pw == 1) {
-//			infoLabel.setText("username is incorrect");
-			PopUpScreenController.infoWindow( loginbtn, "Username is incorrect");
+			PopUpScreenController.infoWindow("Username is incorrect", "Please enter your Username again");
 		}else if (username == 0 && pw == 0) {
-//			infoLabel.setText("username & Password are incorrect");
-			PopUpScreenController.infoWindow(loginbtn, "Username & Password are incorrect");
+			PopUpScreenController.infoWindow("Username & Password are incorrect", "Please enter your Username & Password again");
 		}else validateLogin();
 	}
 }

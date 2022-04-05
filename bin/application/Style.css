@@ -1,0 +1,15 @@
+.dialog {
+	-fx-background-color: BLACK;
+}
+
+.dialog:header *.header-panel {
+	-fx-background-color: BLACK;
+}
+
+.dialog > *.content.label {
+	-fx-text-fill: WHITE;
+}
+
+.dialog:header *.header-panel.label {
+	-fx-text-fill: WHITE;
+}

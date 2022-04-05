@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.*?>
-<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<?import javafx.scene.image.*?>
 
-<StackPane fx:id="stackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="450.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
+<StackPane fx:id="stackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="450.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
     <children>
         <AnchorPane fx:id="mainLoginPane" prefHeight="450.0" prefWidth="400.0" style="-fx-background-color: BLACK;">
             <children>
-            <ImageView fx:id="imageView" fitHeight="250.0" fitWidth="450.0" preserveRatio="true">
+                <ImageView fx:id="imageView" fitHeight="250.0" fitWidth="450.0" preserveRatio="true">
                     <image>
-						<Image url="@../img/cinema/Name.png" />
+                        <Image url="@../img/cinema/Name.png" />
                     </image>
-            </ImageView>
-            <JFXTextField fx:id="userName" onAction="#loginButtonAction" focusColor="WHITE" labelFloat="true" layoutX="140.0" layoutY="155.0" promptText="Username" style="-fx-text-fill: WHITE;" unFocusColor="WHITE">
-                <font>
-                    <Font size="15.0" />
-                </font>
-            </JFXTextField>
-            <JFXPasswordField fx:id="pwfield" onAction="#loginButtonAction" focusColor="white" labelFloat="true" layoutX="140.0" layoutY="220.0" promptText="Password" style="-fx-text-fill: WHITE;" unFocusColor="WHITE">
-                <font>
-                    <Font size="15.0" />
-                </font>
-            </JFXPasswordField>
-             <JFXButton fx:id="loginbtn" onAction="#loginButtonAction" prefHeight="30.0" prefWidth="75.0" layoutX="130.0" layoutY="300.0" text="Login" textFill="WHITE">
-          		<font>
-             		<Font size="15.0" />
-           		</font>
-       		 </JFXButton>
-       		 <JFXButton fx:id="registrationbtn" onAction="#registrationButtonAction" prefHeight="30.0" prefWidth="110.0" layoutX="220.0" layoutY="300.0" text="Registration" textFill="WHITE">
-          		<font>
-             		<Font size="15.0" />
-           		</font>
-       		 </JFXButton>
-       		  <JFXButton fx:id="closebtn" onAction="#closeButtonAction" prefHeight="30.0" prefWidth="110.0" layoutX="165.0" layoutY="350.0" text="close" textFill="WHITE">
-          		<font>
-             		<Font size="15.0" />
-           		</font>
-       		 </JFXButton>
+                </ImageView>
+                <JFXTextField fx:id="userName" focusColor="WHITE" labelFloat="true" layoutX="140.0" layoutY="155.0" onAction="#loginButtonAction" promptText="Username" style="-fx-text-fill: WHITE;" unFocusColor="WHITE">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </JFXTextField>
+                <JFXPasswordField fx:id="pwfield" focusColor="white" labelFloat="true" layoutX="140.0" layoutY="220.0" onAction="#loginButtonAction" promptText="Password" style="-fx-text-fill: WHITE;" unFocusColor="WHITE">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </JFXPasswordField>          
+                <JFXButton fx:id="loginbtn" layoutX="130.0" layoutY="300.0" onAction="#loginButtonAction" prefHeight="30.0" prefWidth="75.0" text="Login" textFill="WHITE">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="registrationbtn" layoutX="220.0" layoutY="300.0" onAction="#registrationButtonAction" prefHeight="30.0" prefWidth="110.0" text="Registration" textFill="WHITE">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="closebtn" layoutX="165.0" layoutY="350.0" onAction="#closeButtonAction" prefHeight="30.0" prefWidth="110.0" text="close" textFill="WHITE">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </JFXButton>
             </children>
         </AnchorPane>
     </children>
