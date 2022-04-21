@@ -74,8 +74,8 @@ public class RegistrationController {
 						e.printStackTrace();
 						System.out.println("inserting Data unsuccessful");
 					}
-				} else PopUpScreenController.infoWindow("Username is already Taken!", "Please take another Username that isn't taken");
-			} else PopUpScreenController.infoWindow("the passwords are not indentical!", "Please enter the passwords again");
-		}else PopUpScreenController.infoWindow("please complete your Registration!", null);
+				} else PopUpScreen.infoWindow("Username is already Taken!", "Please take another Username that isn't taken");
+			} else PopUpScreen.infoWindow("the passwords are not indentical!", "Please enter the passwords again");
+		}else PopUpScreen.infoWindow("please complete your Registration!", null);
 	}
 }

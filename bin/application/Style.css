@@ -1,9 +1,16 @@
+.button {
+	-fx-background-color: BLACK;
+	-fx-background-radius: 1;
+	-fx-text-fill: WHITE;
+}
+
 .dialog {
 	-fx-background-color: BLACK;
 }
 
 .dialog:header *.header-panel {
 	-fx-background-color: BLACK;
+	-fx-text-fill: WHITE;
 }
 
 .dialog > *.content.label {
@@ -13,3 +20,4 @@
 .dialog:header *.header-panel.label {
 	-fx-text-fill: WHITE;
 }
+

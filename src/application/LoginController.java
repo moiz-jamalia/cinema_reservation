@@ -93,11 +93,11 @@ public class LoginController {
 		int pw = DatabaseConnection.getPassword(pwfield.getText());
 				
 		if (username == 1 && pw == 0) {
-			PopUpScreenController.infoWindow("Password is incorrect", "Please enter your Password again");
+			PopUpScreen.infoWindow("Password is incorrect", "Please enter your Password again");
 		}else if (username == 0 && pw == 1) {
-			PopUpScreenController.infoWindow("Username is incorrect", "Please enter your Username again");
+			PopUpScreen.infoWindow("Username is incorrect", "Please enter your Username again");
 		}else if (username == 0 && pw == 0) {
-			PopUpScreenController.infoWindow("Username & Password are incorrect", "Please enter your Username & Password again");
+			PopUpScreen.infoWindow("Username & Password are incorrect", "Please enter your Username & Password again");
 		}else validateLogin();
 	}
 }

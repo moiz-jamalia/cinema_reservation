@@ -13,7 +13,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class PopUpScreenController {
+public class PopUpScreen {
 	
 	@FXML
 	private JFXButton okaybtn;
@@ -39,13 +39,12 @@ public class PopUpScreenController {
 	public static void infoWindow(String Title, String content) {
 		DialogPane dialog = new DialogPane();
 		Alert alert = new Alert(AlertType.INFORMATION);
-		alert.setTitle(Title);
 		alert.setHeaderText(Title);
 		alert.setContentText(content);
 		alert.initStyle(StageStyle.UNDECORATED);
 		
 		dialog = alert.getDialogPane();
-		dialog.getStylesheets().add(PopUpScreenController.class.getResource("Style.css").toString());
+		dialog.getStylesheets().add(PopUpScreen.class.getResource("Style.css").toString());
 		dialog.getStyleClass().add("dialog");
 		
 		alert.showAndWait();

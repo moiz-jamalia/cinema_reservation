@@ -15,11 +15,7 @@
 						<Image url="@../img/cinema/Logo_Name_Slogan.png" />
                     </image>
                 </ImageView>
-                <Label layoutX="200.0" layoutY="255.0" text="Loading..." textFill="WHITE">
-                    <font>
-                        <Font name="Segoe UI Black" size="13.0" />
-                    </font>
-                </Label>
+                <ProgressBar fx:id="progressbar" layoutX="85.0" layoutY="280.0" prefHeight="10.0" prefWidth="265.0" visible="false"/>
                 <!-- <JFXProgressBar fx:id="progressbar" layoutX="85.0" layoutY="280.0" prefHeight="10.0" prefWidth="265.0" visible="false"/> -->
             </children>
         </AnchorPane>
