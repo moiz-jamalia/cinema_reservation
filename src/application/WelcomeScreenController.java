@@ -10,7 +10,8 @@ import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
+
+import javafx.scene.control.ProgressIndicator;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
@@ -32,10 +33,11 @@ public class WelcomeScreenController implements Initializable {
 
 	@FXML
 	//instead of JFXProgressBar progressbar until the problem is solved
-	private ProgressBar progressbar;
+	private ProgressIndicator progressindicator;
 
 	public void initialize(URL url, ResourceBundle rb) {
 		int duration = 7000;
+		progressindicator.setVisible(false);
 		Timeline timeline = animateProgressbar();
 		FadeTransition fadeIn = new FadeTransition();
 		fadeIn.setNode(imageView);
@@ -72,9 +74,10 @@ public class WelcomeScreenController implements Initializable {
 	//class com.jfoenix.skins.JFXProgressBarSkin (in module com.jfoenix)cannot access class com.sun.javafx.scene.NodeHelper (in module javafx.graphics)
 	//because module javafx.graphics does not export com.sun.javafx.scene to module com.jfoenix
 	private Timeline animateProgressbar() {
-		progressbar.setVisible(true);
+		progressindicator.setVisible(true);
 		Timeline tl = new Timeline();
 		
+		progressindicator.setProgress(0.25);
 		tl.setCycleCount(1);
 		tl.getKeyFrames().add(new KeyFrame(Duration.millis(2400)));
 		
