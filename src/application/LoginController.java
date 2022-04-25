@@ -5,7 +5,6 @@ import java.sql.*;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
-import com.jfoenix.controls.JFXProgressBar;
 import com.jfoenix.controls.JFXTextField;
 
 import javafx.event.ActionEvent;
@@ -40,9 +39,6 @@ public class LoginController {
 
 	@FXML
 	private JFXButton registrationbtn;
-	
-	@FXML
-	private JFXProgressBar progressbar;
 
 	@FXML
 	public void closeButtonAction(ActionEvent event) {
@@ -66,7 +62,7 @@ public class LoginController {
 		else InfoWindow();
 	}
 
-	public void validateLogin() throws ClassNotFoundException, SQLException {
+	private void validateLogin() throws ClassNotFoundException, SQLException {
 		Connection conDB = DatabaseConnection.DBConnection();
 		
 		String verifyLogin = "SELECT count(1) FROM user_account WHERE username = '" + userName.getText() + "' AND password = '" + pwfield.getText() + "';";
@@ -77,6 +73,7 @@ public class LoginController {
 
 			while (queryRes.next()) {
 				if (queryRes.getInt(1) == 1) {
+					WelcomeScreenController.username = userName.getText();
 					WindowNavigation.switchToView("WelcomeScreen");
 				}else InfoWindow();
 			}

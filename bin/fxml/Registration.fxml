@@ -7,7 +7,7 @@
 
 <StackPane fx:id="stackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="450.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RegistrationController">
     <children>
-        <AnchorPane fx:id="mainloginPane" prefHeight="450.0" prefWidth="400.0" style="-fx-background-color: Black;">
+        <AnchorPane fx:id="mainRegistrationPane" prefHeight="450.0" prefWidth="400.0" style="-fx-background-color: Black;">
             <children>
 	           <Label layoutX="101.0" layoutY="46.0" text="Registration" textAlignment="CENTER" textFill="WHITE">
 	               <font>

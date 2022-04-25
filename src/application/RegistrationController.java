@@ -13,7 +13,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
 
 public class RegistrationController {
 
@@ -21,7 +20,7 @@ public class RegistrationController {
 	private StackPane stackPane;
 
 	@FXML
-	private AnchorPane mainloginPane;
+	private AnchorPane mainRegistrationPane;
 
 	@FXML
 	private JFXTextField userName;
@@ -43,9 +42,6 @@ public class RegistrationController {
 
 	@FXML
 	private JFXButton cancelbtn;
-
-	@FXML
-	private Stage stage;
 
 	@FXML
 	public void cancelButtonAction(ActionEvent event) {

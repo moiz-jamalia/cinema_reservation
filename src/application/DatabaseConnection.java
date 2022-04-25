@@ -60,4 +60,25 @@ public class DatabaseConnection {
 		}
 		return password;
 	}
+	
+	static String getFullName(String username) throws ClassNotFoundException, SQLException {
+		
+		Connection connection = DBConnection();
+		
+		String name = null;
+		
+		String getName = "SELECT firstname, lastname FROM user_account WHERE username = '"+ username +"'"; 
+		
+		Statement stmt = connection.createStatement();
+		ResultSet queryRes = stmt.executeQuery(getName);
+		
+		while (queryRes.next()) {
+			
+			String vorname = queryRes.getString("firstname");
+			String nachname = queryRes.getString("lastname");
+
+			name = vorname + " " + nachname;
+		}
+		return name;
+	}
 }
