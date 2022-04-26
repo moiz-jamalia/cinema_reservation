@@ -21,3 +21,6 @@
 	-fx-text-fill: WHITE;
 }
 
+.jfx-hamburger StackPane {
+	-fx-background-color: white;
+}

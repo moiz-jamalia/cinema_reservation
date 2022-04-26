@@ -21,7 +21,7 @@
                <font>
                   <Font size="18.0" />
                </font></Label>
-            	<ProgressIndicator fx:id="progressindicator" blendMode="SCREEN" cache="true" cacheHint="ROTATE" depthTest="ENABLE" layoutX="206.0" layoutY="280.0" prefHeight="50.0" prefWidth="200.0" style="-fx-progress-color: white;" />
+            	<ProgressIndicator blendMode="SCREEN" cache="true" cacheHint="ROTATE" depthTest="ENABLE" layoutX="206.0" layoutY="280.0" prefHeight="50.0" prefWidth="200.0" style="-fx-progress-color: white;" />
             </children>
         </AnchorPane>
     </children>
