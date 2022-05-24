@@ -80,7 +80,5 @@ public class DatabaseConnection {
 			name = vorname + " " + nachname;
 		}
 		return name;
-	}
-	
-	static 
+	} 
 }

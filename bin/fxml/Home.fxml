@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.gluonhq.charm.glisten.control.Avatar?>
 <?import com.jfoenix.controls.JFXHamburger?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 
 <StackPane fx:id="stackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HomeController">
     <children>
         <AnchorPane fx:id="mainHomePane" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: BLACK;" stylesheets="@../application/Style.css">
          <children>
+            <AnchorPane prefHeight="500.0" prefWidth="100.0">
+               <children>
+                  <VBox prefHeight="500.0" prefWidth="100.0">
+                     <children>
+                        <Avatar radius="30.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
             <JFXHamburger fx:id="ham" layoutX="621.0" layoutY="21.0" prefHeight="36.0" prefWidth="41.0" styleClass="Style.css" />
          </children>
         </AnchorPane>
