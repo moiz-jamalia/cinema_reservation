@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;">
+         <children>
+            <ImageView fitHeight="100.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/cinema/Name.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="143.0" fitWidth="240.0" layoutX="61.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true" />
+            <Label id="name" layoutX="276.0" layoutY="180.0" prefHeight="47.0" prefWidth="122.0" text="Name:" textFill="WHITE">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <Label id="name" layoutX="398.0" layoutY="180.0" prefHeight="47.0" prefWidth="148.0" text="placeholder" textFill="WHITE">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="276.0" layoutY="274.0" prefHeight="47.0" prefWidth="122.0" text="Passwort:" textFill="WHITE">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <Label id="passwort" layoutX="398.0" layoutY="274.0" prefHeight="47.0" prefWidth="148.0" text="placeholder" textFill="WHITE">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="profilbtn" layoutX="298.0" layoutY="384.0" onAction="#profileAction" prefHeight="60.0" prefWidth="200.0" text="account löschen">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </JFXButton>
+            <Label id="vorname" layoutX="398.0" layoutY="227.0" prefHeight="47.0" prefWidth="148.0" text="placeholder" textFill="WHITE">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="276.0" layoutY="227.0" prefHeight="47.0" prefWidth="122.0" text="Vorname:" textFill="WHITE">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
