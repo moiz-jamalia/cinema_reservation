@@ -75,6 +75,7 @@ public class LoginController {
 			while (queryRes.next()) {
 				if (queryRes.getInt(1) == 1) {
 					WelcomeScreenController.username = userName.getText();
+					WelcomeScreenController.setText("Welcome " + WelcomeScreenController.username);
 					WindowNavigation.switchToView("WelcomeScreen");
 				}else InfoWindow();
 			}

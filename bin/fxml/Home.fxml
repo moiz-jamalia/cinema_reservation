@@ -12,7 +12,7 @@
     <children>
         <AnchorPane fx:id="mainHomePane" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: BLACK;" stylesheets="@../application/Style.css">
          <children>
-            <AnchorPane prefHeight="500.0" prefWidth="100.0">
+            <AnchorPane fx:id="navigationPane" prefHeight="500.0" prefWidth="190.0">
                <children>
                   <VBox prefHeight="500.0" prefWidth="190.0">
                      <children>

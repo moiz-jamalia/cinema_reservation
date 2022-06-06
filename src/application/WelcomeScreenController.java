@@ -33,19 +33,22 @@ public class WelcomeScreenController implements Initializable {
 	private Label userName;
 	
 	static String username;
+	
+	static String welcomeGoodbye;
 
 	@FXML
 	private ProgressIndicator pi = new ProgressIndicator();
 
 	public void initialize(URL url, ResourceBundle rb) {
 		int duration = 7000;
-		String username = null;
+		String username = null;  
 		try {
 			username = DatabaseConnection.getFullName(WelcomeScreenController.username);
 		} catch (ClassNotFoundException | SQLException e2) {
 			e2.printStackTrace();
 		}
-		userName.setText("Welcome " + username);
+		System.out.println(WelcomeScreenController.username);
+		userName.setText(welcomeGoodbye + " " + username);
 		ArrayList<Object> fade = new ArrayList<>();
 		fade.add(imageView);
 		fade.add(userName);
@@ -79,5 +82,11 @@ public class WelcomeScreenController implements Initializable {
 				}
 			});
 		}
+	}
+	
+	public static void setText(String text) {
+		String[] str = text.split(text);
+		welcomeGoodbye = str[0];
+		username = str[1];
 	}
 }
