@@ -27,58 +27,62 @@ public class DatabaseConnection {
 	}
 
 	static int getUserName(String username) throws SQLException, ClassNotFoundException {
-		
+
 		Connection connection = DBConnection();
 
 		String getUserName = "SELECT COUNT(1) FROM user_account WHERE username = '" + username + "';";
+
 		int userName = 0;
 
 		Statement stmt = connection.createStatement();
 		ResultSet queryRes = stmt.executeQuery(getUserName);
 
-		while (queryRes.next()) {
-			
-			if (queryRes.getInt(1) == 1) userName = 1;
-		}
+		while (queryRes.next())	if (queryRes.getInt(1) == 1) userName = 1;
+
 		return userName;
 	}
 
 	static int getPassword(String pw) throws SQLException, ClassNotFoundException {
-		
+
 		Connection connection = DBConnection();
 
 		String getPassword = "SELECT COUNT(1) FROM user_account WHERE password = '" + pw + "';";
+
 		int password = 0;
 
 		Statement stmt = connection.createStatement();
 		ResultSet queryRes = stmt.executeQuery(getPassword);
 
-		while (queryRes.next()) {
+		while (queryRes.next())	if (queryRes.getInt(1) == 1)password = 1;
 
-			if(queryRes.getInt(1) == 1) password = 1;
-			
-		}
 		return password;
 	}
-	
+
 	static String getFullName(String username) throws ClassNotFoundException, SQLException {
-		
+
 		Connection connection = DBConnection();
-		
+
 		String name = null;
-		
-		String getName = "SELECT firstname, lastname FROM user_account WHERE username = '"+ username +"'"; 
-		
+
+		String getName = "SELECT firstname, lastname FROM user_account WHERE username = '" + username + "'";
+
 		Statement stmt = connection.createStatement();
 		ResultSet queryRes = stmt.executeQuery(getName);
-		
+
 		while (queryRes.next()) {
-			
+
 			String vorname = queryRes.getString("firstname");
 			String nachname = queryRes.getString("lastname");
 
 			name = vorname + " " + nachname;
 		}
 		return name;
-	} 
+	}
+
+	static void saveImage() throws SQLException, ClassNotFoundException {
+
+		Connection connection = DBConnection();
+
+		String image = null;
+	}
 }

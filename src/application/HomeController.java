@@ -28,7 +28,13 @@ public class HomeController implements Initializable{
 	private JFXButton profilbtn;
 	
 	@FXML
-	private JFXButton 
+	private JFXButton moviebtn;
+	
+	@FXML 
+	private JFXButton logoutbtn;
+	
+	@FXML
+	private JFXButton reservationbtn;
 	
 	public void initialize(URL url, ResourceBundle rb) {
 		HamburgerSlideCloseTransition slideClose = new HamburgerSlideCloseTransition(ham);
@@ -37,5 +43,25 @@ public class HomeController implements Initializable{
 			slideClose.setRate(slideClose.getRate()*-1);
 			slideClose.play();
 		});
+	}
+	
+	@FXML
+	public void profileAction() {
+		
+	}
+	
+	@FXML
+	public void movieAction() {
+		
+	}
+	
+	@FXML
+	public void reservationAction() {
+		
+	}
+	
+	@FXML
+	public void logOutAction() {
+		
 	}
 }

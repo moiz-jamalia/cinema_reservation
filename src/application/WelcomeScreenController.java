@@ -49,6 +49,7 @@ public class WelcomeScreenController implements Initializable {
 		ArrayList<Object> fade = new ArrayList<>();
 		fade.add(imageView);
 		fade.add(userName);
+		
 		for (Object obj : fade) {
 			FadeTransition fadeIn = new FadeTransition();
 			fadeIn.setNode((Node) obj);

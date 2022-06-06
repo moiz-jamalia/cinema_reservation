@@ -63,6 +63,7 @@ public class LoginController {
 	}
 
 	private void validateLogin() throws ClassNotFoundException, SQLException {
+		
 		Connection conDB = DatabaseConnection.DBConnection();
 		
 		String verifyLogin = "SELECT count(1) FROM user_account WHERE username = '" + userName.getText() + "' AND password = '" + pwfield.getText() + "';";
