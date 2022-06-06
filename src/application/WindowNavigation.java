@@ -18,7 +18,7 @@ public class WindowNavigation {
 		Main.primaryStage.show();
 	}
 	
-	public static void switchToPane(String pane) {
-		
-	}
+//	public static void switchToPane(String pane) {
+//		
+//	}
 }

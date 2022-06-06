@@ -35,6 +35,8 @@ public class WelcomeScreenController implements Initializable {
 	static String username;
 	
 	static String welcomeGoodbye;
+	
+	String wg;
 
 	@FXML
 	private ProgressIndicator pi = new ProgressIndicator();
@@ -47,7 +49,7 @@ public class WelcomeScreenController implements Initializable {
 		} catch (ClassNotFoundException | SQLException e2) {
 			e2.printStackTrace();
 		}
-		System.out.println(WelcomeScreenController.username);
+		wg = welcomeGoodbye;
 		userName.setText(welcomeGoodbye + " " + username);
 		ArrayList<Object> fade = new ArrayList<>();
 		fade.add(imageView);
@@ -73,10 +75,16 @@ public class WelcomeScreenController implements Initializable {
 			fadeIn.setOnFinished((e) -> {
 				fadeOut.play();
 			});
-
+			
 			fadeOut.setOnFinished((e) -> {
+				System.out.print(wg);
+				String screen = null;
+				
+				if (wg.equals("welcome")) screen = "Home";
+				else if (wg.equals("goodbye")) screen = "Login";
+				
 				try {
-					WindowNavigation.switchToView("Home");
+					WindowNavigation.switchToView(screen);
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				}
@@ -85,7 +93,7 @@ public class WelcomeScreenController implements Initializable {
 	}
 	
 	public static void setText(String text) {
-		String[] str = text.split(text);
+		String[] str = text.split(" ");
 		welcomeGoodbye = str[0];
 		username = str[1];
 	}

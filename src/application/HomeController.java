@@ -72,10 +72,10 @@ public class HomeController implements Initializable{
 	
 	@FXML
 	public void logOutAction(ActionEvent event) {
+		System.out.println("Logout");
 		try {
 			WelcomeScreenController.setText("goodbye " + WelcomeScreenController.username);
-			WindowNavigation.switchToPane("WelcomeScreen");
-			WindowNavigation.switchToPane("Login");
+			WindowNavigation.switchToView("WelcomeScreen");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
