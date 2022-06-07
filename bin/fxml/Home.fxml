@@ -1,17 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXDrawer?>
-<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXTabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.JFXDrawer?>
 
 <StackPane fx:id="stackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HomeController">
     <children>
         <AnchorPane fx:id="mainHomePane" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: BLACK;" stylesheets="@../application/Style.css">
          <children>
             <JFXDrawer fx:id="navigation" prefHeight="500.0" prefWidth="200.0" />
-            <JFXHamburger fx:id="ham" layoutX="621.0" layoutY="21.0" prefHeight="36.0" prefWidth="41.0" styleClass="Style.css" />
+            <JFXHamburger fx:id="ham" layoutX="620.0" layoutY="20.0" prefHeight="35.0" prefWidth="40.0" styleClass="Style.css" />
          </children>
         </AnchorPane>
+     <JFXTabPane fx:id="tabPane" layoutX="210.0" rotateGraphic="true">
+      	<tabs>
+      		<Tab text="Screen 1">
+      			<content>
+      				<AnchorPane>
+      					
+      				</AnchorPane>
+      			</content>
+      		</Tab>
+      		<Tab text="Screen 2">
+      		<content>
+      				<AnchorPane>
+      					
+      				</AnchorPane>
+      			</content>
+      		</Tab>
+      		<Tab text="Screen 3">
+      		<content>
+      				<AnchorPane>
+      					
+      				</AnchorPane>
+      			</content>
+      		</Tab>
+      	</tabs>
+      </JFXTabPane>
     </children>
 </StackPane>

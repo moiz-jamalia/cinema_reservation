@@ -78,11 +78,4 @@ public class DatabaseConnection {
 		}
 		return name;
 	}
-
-	static void saveImage() throws SQLException, ClassNotFoundException {
-
-		Connection connection = DBConnection();
-
-		String image = null;
-	}
 }

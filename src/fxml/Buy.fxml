@@ -9,42 +9,46 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BuyController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;">
          <children>
             <ImageView id="poster" fitHeight="320.0" fitWidth="236.0" layoutX="423.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@cinema_reservation-main/src/img/cinema/52b86863a449dead43dbf2e6469b2d2b4a026a46.jpg" />
+                  <Image url="@../img/cinema/52b86863a449dead43dbf2e6469b2d2b4a026a46.jpg" />
                </image>
             </ImageView>
             <ImageView fitHeight="100.0" fitWidth="200.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@cinema_reservation-main/src/img/cinema/Name.png" />
+                  <Image url="@../img/cinema/Name.png" />
                </image>
             </ImageView>
-            <JFXButton fx:id="profilbtn" layoutX="35.0" layoutY="364.0" onAction="#profileAction" prefHeight="60.0" prefWidth="139.0" text="Buchen">
+            <JFXButton id="purchase" fx:id="profilbtn" layoutX="70.0" layoutY="364.0" onAction="#profileAction" prefHeight="60.0" prefWidth="139.0" text="Purchase" textFill="WHITE">
                <font>
                   <Font size="26.0" />
                </font>
             </JFXButton>
-            <TextField id="anzSitze" layoutX="242.0" layoutY="172.0" promptText="1, 2, 3 ..." />
-            <Label layoutX="65.0" layoutY="164.0" prefHeight="42.0" prefWidth="149.0" text="Anzahl Sitze" textFill="WHITE">
+            <TextField id="seats" layoutX="242.0" layoutY="172.0" promptText="1, 2, 3 ..." />
+            <Label layoutX="65.0" layoutY="164.0" prefHeight="42.0" prefWidth="149.0" text="Seats:" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutX="65.0" layoutY="243.0" prefHeight="42.0" prefWidth="52.0" text="Preis:" textFill="WHITE">
+            <Label layoutX="65.0" layoutY="243.0" prefHeight="42.0" prefWidth="52.0" text="Price:" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label id="preis" layoutX="122.0" layoutY="243.0" prefHeight="42.0" prefWidth="130.0" text="placeholder" textFill="WHITE">
+            <Label id="price" layoutX="242.0" layoutY="243.0" prefHeight="42.0" prefWidth="149.0" text="placeholder" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
+            <JFXButton id="cancel" fx:id="cancelbtn" layoutX="247.0" layoutY="364.0" onAction="#cancelAction" prefHeight="60.0" prefWidth="139.0" text="Cancel" textFill="WHITE">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </JFXButton>
          </children>
       </AnchorPane>
    </children>

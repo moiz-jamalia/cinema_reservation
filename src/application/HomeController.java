@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
+import com.jfoenix.controls.JFXTabPane;
 import com.jfoenix.transitions.hamburger.HamburgerSlideCloseTransition;
 
 import javafx.fxml.FXML;
@@ -43,6 +44,9 @@ public class HomeController implements Initializable{
     
     @FXML
     private JFXDrawer navigation;
+    
+    @FXML
+    private JFXTabPane tabPane;
 	
 	public void initialize(URL url, ResourceBundle rb) {
 		HamburgerSlideCloseTransition slideClose = new HamburgerSlideCloseTransition(ham);
