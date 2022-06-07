@@ -12,6 +12,9 @@
             <JFXDrawer fx:id="navigation" prefHeight="500.0" prefWidth="200.0" />
             <JFXHamburger fx:id="ham" layoutX="621.0" layoutY="21.0" prefHeight="36.0" prefWidth="41.0" styleClass="Style.css" />
          </children>
+         <Tabs>
+         	<Tab text=""
+         </Tabs>
         </AnchorPane>
     </children>
 </StackPane>

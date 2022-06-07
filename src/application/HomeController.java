@@ -9,7 +9,6 @@ import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
 import com.jfoenix.transitions.hamburger.HamburgerSlideCloseTransition;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -90,7 +89,6 @@ public class HomeController implements Initializable{
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-		
 		
 		slideClose.setRate(-1);
 		ham.addEventHandler(MouseEvent.MOUSE_PRESSED, (e) -> {
